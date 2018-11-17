@@ -1,11 +1,21 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Navbar from './Navbar';
+import Home from './Home';
+import Players from './Players';
+import Teams from './Teams';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>React Router</h1>
-      </div>
+      <Router>
+        <div>
+          <Navbar />
+          <Route path='/' exact component={Home} />
+          <Route path='/players' component={Players} />
+          <Route path='/teams' component={Teams} />
+        </div>
+      </Router>
     );
   }
 }
